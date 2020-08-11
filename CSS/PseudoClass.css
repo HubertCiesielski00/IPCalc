@@ -1,0 +1,10 @@
+
+#Submit:hover{
+    transform: translateX(0);
+    color: white;
+}
+#Submit:focus{
+    outline: none;
+    color: white;
+    font-weight: bold;
+}
