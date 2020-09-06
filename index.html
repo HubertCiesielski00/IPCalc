@@ -10,6 +10,7 @@
     <link rel = "stylesheet" href = "CSS/normalize.css">
 
     <script src="Script/index.js"></script>
+    <script src="Script/Functions.js"></script>
 </head>
 <body>
     <header></header>
@@ -17,13 +18,13 @@
         <div class="WorkSpace">
             <div class="FormBox">
                 <span>Adres IP</span>
-                <input type="number" class="IpBox">
+                <input id = "IP" type="text" class="IpBox">
                 <span>Maska Podsieci</span>
-                <input type="number" class="IpBox">
+                <input id = "Mask" type="text" class="IpBox">
                 <span>Adres Sieciowy</span>
-                <input type="number" class="IpBox">
+                <input id = "NetWork" type="text" disabled class="IpBox">
                 <span>Adres Rozgłoszeniowy</span>
-                <input type="number" class="IpBox">
+                <input id = "BroadCast" type="text" disabled class="IpBox">
             </div>
             <div class="ButtonBox">
                 <button id = "Submit">&rightarrow;</button>
