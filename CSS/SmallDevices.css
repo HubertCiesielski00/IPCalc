@@ -1,0 +1,31 @@
+@media(max-width: 1024px){
+main{
+    width: 80%;
+}
+}
+@media (max-width: 720px){
+    body{
+        display: static;
+        min-height: 100vh;
+    }
+    header footer{
+        display: block;
+    }
+    header{
+        font-size: 20px;
+        height: 5%;
+    }
+    main{
+        width: 100%;
+    }
+    footer{
+        position: fixed;
+        left: 0;
+        bottom:0;
+    }
+}
+@media (max-height: 500px){
+    footer{
+        position: static;
+    }
+}

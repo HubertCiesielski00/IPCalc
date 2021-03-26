@@ -1,52 +1,62 @@
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-body{
-    width: 100vw;
-    height: 100vh;
-}
-header, footer{
-    width: 100%;
-    height: 20%;
-    background-color: hsl(20, 95%,75%);
-}
-main{
-    height: 60%;
-    width: 100%;
-    padding: 20px;
-}
-.WorkSpace{
-    height: 100%;
-    width: 500px;
-    margin: auto;
-    padding: 20px;
-    border: 3px dotted hsl(220, 90%, 60%);
-    padding: 20px;
-}
 
-.IpBox{
-    color: black;
-    background-color:white;
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 20px;
-    padding: 7px;
-    border: 2px solid black;
-}
-.ButtonBox{
-    display: flex;
-    justify-content: flex-end;
+    * {
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    header, footer{
+        text-align: center;
+        display: block;
+        color: white;
+        width: 100%;
+        background-color:hsl(220, 50%, 50%);
+    }
+    header{
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        font-size: 40px;
+    }
+    footer{
+        position: absolute;
+        bottom: 0;
+        padding: 7px
+    }
+    main{
+        background-color: hsl(220, 80%, 90%);
+        width: 700px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 20px;
+        padding: 20px;
+    }
+    .IpBox, .Submit{
+        color: black;
+        width: 100%;
+        padding: 7px;
+    
+    }
+    .IpBox{
+        background-color:white;
+        margin-bottom: 20px;
+        border: 2px solid black;
+    }
+    .Submit{
+        padding: 7px;
+        background-color: hsl(130, 80%, 70%);
+        border: 1px solid whitesmoke;
+    }
+    
 
-}
-#Submit{
-    font-size: 20px;
-    width: 85px;
-    height: 30px;
-    background-color: hsl(130, 80%, 70%);
-    border: 1px solid white;
-    transition: transform 220ms ease-in-out, color 220ms linear;
-    transform: translateX(-30px);
-    will-change: transform;
-}
+
+    
+    

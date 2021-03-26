@@ -1,10 +1,8 @@
 
-#Submit:hover{
-    transform: translateX(0);
+.Submit:hover{
     color: white;
 }
-#Submit:focus{
+.Submit:focus{
     outline: none;
     color: white;
-    font-weight: bold;
 }

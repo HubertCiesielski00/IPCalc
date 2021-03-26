@@ -5,32 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easy IP</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/PseudoClass.css">
-    <link rel = "stylesheet" href = "CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <link rel="stylesheet" href="./CSS/SmallDevices.css"
+
 
     <script src="Script/index.js"></script>
     <script src="Script/Functions.js"></script>
 </head>
 <body>
-    <header></header>
+    <header>Kalkulator podsieci</header>
     <main>
-        <div class="WorkSpace">
-            <div class="FormBox">
-                <span>Adres IP</span>
-                <input id = "IP" type="text" class="IpBox">
-                <span>Maska Podsieci</span>
-                <input id = "Mask" type="text" class="IpBox">
-                <span>Adres Sieciowy</span>
-                <input id = "NetWork" type="text" disabled class="IpBox">
-                <span>Adres Rozgłoszeniowy</span>
-                <input id = "BroadCast" type="text" disabled class="IpBox">
-            </div>
-            <div class="ButtonBox">
-                <button id = "Submit">&rightarrow;</button>
-            </div>
+        <div class="FormBox">
+            <label for="IP">Adres IP</label>
+            <input id="IP" type="text" class="IP IpBox" placeholder="Np. 192.168.1.1">
+
+            <label for="Mask">Maska Podsieci</label>
+            <input id="Mask"type="text" class="IpBox" list="masks" placeholder="Np. 255.255.255.0">
+            
+            <label for="NetWork">Adres Sieciowy</label>
+            <input id="NetWork" class="IpBox" type="text" disabled>
+            
+            <label fot="BroadCast">Adres Rozgłoszeniowy</label>
+            <input id="BroadCast" class="IpBox" type="text" disabled>
+            <button class = "Submit">Oblicz</button>
         </div>
     </main>
-    <footer></footer>
+    
+    <footer>Hubert Ciesielski</footer>
+    
+        <datalist id="masks">
+            <option value="0.0.0.0">
+            <option value="255.0.0.0">
+            <option value="255.255.0.0">
+            <option value="255.255.255.0">
+        </datalist>
 </body>
 </html>

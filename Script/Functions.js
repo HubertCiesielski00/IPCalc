@@ -1,6 +1,8 @@
+const IpValidForm = /^[0-9]{1,3}[\.,][0-9]{1,3}[\.,][0-9]{1,3}[\.,][0-9]{1,3}$/
+
 const Calculate = () =>{
     try{
-
+        
         let Inputs = {
             IP: document.querySelector("#IP"),
             Mask : document.querySelector("#Mask"),
@@ -12,6 +14,7 @@ const Calculate = () =>{
         let Mask = CutString(Inputs.Mask.value);
         let Network = [];
         let Broadcast = [];
+
         let IpBinary = "";
         let MaskBinary = "";
         let NetworkBinary = "";
@@ -23,20 +26,23 @@ const Calculate = () =>{
         }
         if(IsMaskValid(MaskBinary)){
             for(let i = 0; i < MaskBinary.length; i++){
-                    if (MaskBinary[i] == '1')
+                if (MaskBinary[i] == '1')
                 {
                     NetworkBinary += IpBinary[i];
                     BroadcastBinary += IpBinary[i];
                 }
-                if (MaskBinary[i] == "0"){
+                else if (MaskBinary[i] == "0"){
                     NetworkBinary += '0';
                     BroadcastBinary += '1';
+                }
+                else {
+                    throw 'An unnexpected error occoured';
                 }
             }
             
         }
-        Network = CutAdress(NetworkBinary);
-        Broadcast = CutAdress(BroadcastBinary);
+        Network = CutAddress(NetworkBinary);
+        Broadcast = CutAddress(BroadcastBinary);
         for(let i = 0; i < 4; i++){
             Network[i] = ConvertToDecimal(Network[i]);
             Broadcast[i] = ConvertToDecimal(Broadcast[i]);
@@ -74,7 +80,7 @@ const CutString = Str =>{
 
 }
 
-const ConvertToBinary = (Val) =>{
+const ConvertToBinary = Val =>{
     let result = "";
    for(let i = 7; i >= 0; i--){
        if(Val >= Power(2,i)){
@@ -101,30 +107,28 @@ const Power = (base, exponent) =>{
         return result;
     }
 }
-const IsMaskValid = (Arr) =>{
+const IsMaskValid = Arr =>{
     
     for(let i = 1; i < Arr.length; i++){
         if (Arr[i] == '1' && Arr[i-1] == '0')
         {
             throw "Nieprawidłowa maska podsieci";
-            return false;
-            break;
         }
     }
     
     return true;
 }
-const CutAdress = (Adress) =>{
+const CutAddress = (Address) =>{
     let temp = "";
-    const AdressToRet = [];
+    const AddressToRet = [];
     for(let i = 0; i < 4; i++){
         for(let j = 0; j < 8; j++){
-            temp += Adress[8*i+j];
+            temp += Address[8*i+j];
         }
-        AdressToRet.push(temp);
+        AddressToRet.push(temp);
         temp = "";
     }
-    return AdressToRet;
+    return AddressToRet;
 }
 const ConvertToDecimal = (Arg) =>{
     let temp = 0;
